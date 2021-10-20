@@ -5,10 +5,10 @@ using System.Linq;
 
 namespace E_Commerce_WebApp.DBModels
 {
-    public partial class EcommerceContext : DbContext
+    public partial class ECommerceContext : DbContext
     {
-        public EcommerceContext()
-            : base("name=EcommerceContext")
+        public ECommerceContext()
+            : base("name=ECommerceContext")
         {
         }
 
@@ -22,10 +22,6 @@ namespace E_Commerce_WebApp.DBModels
                 .HasMany(e => e.Orders)
                 .WithRequired(e => e.Item)
                 .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<User>()
-                .Property(e => e.IsAdmin)
-                .IsFixedLength();
 
             modelBuilder.Entity<User>()
                 .HasMany(e => e.Orders)

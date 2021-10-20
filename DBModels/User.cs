@@ -33,9 +33,7 @@ namespace E_Commerce_WebApp.DBModels
         [StringLength(200)]
         public string PasswordSalt { get; set; }
 
-        [Required]
-        [MaxLength(1)]
-        public byte[] IsAdmin { get; set; }
+        public bool IsAdmin { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order> Orders { get; set; }
